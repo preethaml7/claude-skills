@@ -1,13 +1,13 @@
 ---
 title: "Slash Commands — AI Coding Agent Commands & Codex Shortcuts"
-description: "31 slash commands for Claude Code, Codex CLI, and Gemini CLI — sprint planning, tech debt analysis, PRDs, OKRs, and more."
+description: "32 slash commands for Claude Code, Codex CLI, and Gemini CLI — sprint planning, tech debt analysis, PRDs, OKRs, and more."
 ---
 
 <div class="domain-header" markdown>
 
 # :material-console: Slash Commands
 
-<p class="domain-count">31 commands for quick access to common operations</p>
+<p class="domain-count">32 commands for quick access to common operations</p>
 
 </div>
 
@@ -24,6 +24,12 @@ description: "31 slash commands for Claude Code, Codex CLI, and Gemini CLI — s
     ---
 
     Generate Keep a Changelog entries from git history and validate commit message format.
+
+-   :material-console:{ .lg .middle } **[`/chaos-experiment`](chaos-experiment.md)**
+
+    ---
+
+    Step through the design of a chaos engineering experiment using the chaos-engineering skill. Produces a plan, calcula...
 
 -   :material-console:{ .lg .middle } **[`/code-to-prd`](code-to-prd.md)**
 

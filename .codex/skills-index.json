@@ -3,7 +3,7 @@
   "name": "claude-code-skills",
   "description": "Production-ready skill packages for AI agents - Marketing, Engineering, Product, C-Level, PM, and RA/QM",
   "repository": "https://github.com/alirezarezvani/claude-skills",
-  "total_skills": 185,
+  "total_skills": 186,
   "skills": [
     {
       "name": "business-growth-skills",
@@ -430,6 +430,12 @@
       "source": "../../engineering/skills/changelog-generator",
       "category": "engineering-advanced",
       "description": "Changelog Generator"
+    },
+    {
+      "name": "chaos-engineering",
+      "source": "../../engineering/skills/chaos-engineering",
+      "category": "engineering-advanced",
+      "description": "Use when planning, running, or learning from chaos engineering experiments. Triggers on \"chaos experiment\", \"fault injection\", \"gameday\", \"resilience test\", \"blast radius\", \"steady state\", \"abort criteria\", \"Chaos Toolkit\", \"Chaos Mesh\", \"Litmus\", \"Gremlin\", \"AWS FIS\", or any deliberate failure-injection question. Ships experiment designer, blast-radius calculator, and postmortem generator (all stdlib Python), 4 references on chaos principles + experiment design + attack taxonomy + tooling landscape, and a /chaos-experiment slash command. Composes with feature-flags-architect (kill switches as abort triggers) and kubernetes-operator (common chaos targets)."
     },
     {
       "name": "ci-cd-pipeline-builder",
@@ -1133,7 +1139,7 @@
       "description": "Software engineering and technical skills"
     },
     "engineering-advanced": {
-      "count": 37,
+      "count": 38,
       "source": "../../engineering",
       "description": "Advanced engineering skills - agents, RAG, MCP, CI/CD, databases, observability"
     },
