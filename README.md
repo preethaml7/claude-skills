@@ -4,9 +4,10 @@
 
 The most comprehensive open-source library of Claude Code skills and agent plugins — also works with OpenAI Codex, Gemini CLI, Cursor, and 7 more coding agents. Reusable expertise packages covering engineering, DevOps, marketing (incl. v2.7.3 AEO — Answer Engine Optimization for LLM citation), security (PreToolUse hooks), compliance, C-level advisory (incl. founder-mode CFO/CMO/CRO/CPO/COO/CHRO/CISO/GC/CDO/CAIO/CCO/VPE personas + 21 /cs:* slash commands), productivity (capture/email/reflect), and a complete research stack (litreview/grants/dossier/patent/syllabus/pulse/notebooklm + hybrid router).
 
-**Works with:** Claude Code · OpenAI Codex · Gemini CLI · OpenClaw · Hermes Agent[^hermes] · Cursor · Aider · Windsurf · Kilo Code · OpenCode · Augment · Antigravity
+**Works with:** Claude Code · OpenAI Codex · Gemini CLI · OpenClaw · Hermes Agent[^hermes] · Mistral Vibe[^vibe] · Cursor · Aider · Windsurf · Kilo Code · OpenCode · Augment · Antigravity
 
 [^hermes]: Hermes Agent is **BYO-sync tier**: the repo ships a pre-generated `.hermes/skills/claude-skills/` tree (305 skills across 12 domains as of v2.7.3), but you run `python scripts/sync-hermes-skills.py` once locally to install into `~/.hermes/skills/`. Uses the same agentskills.io SKILL.md standard — no format conversion.
+[^vibe]: Mistral Vibe is also **BYO-sync tier**: the repo ships a pre-generated `.vibe/skills/claude-skills/` tree (306 skills across 14 domains), run `./scripts/vibe-install.sh` once locally to install into `~/.vibe/skills/`. Same agentskills.io SKILL.md standard — no format conversion. Docs: <https://docs.mistral.ai/mistral-vibe/agents-skills>.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Skills](https://img.shields.io/badge/Skills-329-brightgreen?style=for-the-badge)](#skills-overview)
@@ -28,7 +29,7 @@ Claude Code skills (also called agent skills or coding agent plugins) are modula
 - **Python tools** — ~402 CLI scripts (all stdlib-only, zero pip installs)
 - **Reference docs** — templates, checklists, and domain-specific knowledge
 
-**One repo, eleven platforms.** Works natively as Claude Code plugins, Codex agent skills, Gemini CLI skills, and converts to 8 more tools via `scripts/convert.sh`. All ~402 Python tools run anywhere Python runs.
+**One repo, twelve platforms.** Works natively as Claude Code plugins, Codex agent skills, Gemini CLI skills, Hermes Agent skills, Mistral Vibe skills, and converts to 7 more tools via `scripts/convert.sh`. All ~402 Python tools run anywhere Python runs.
 
 ### Skills vs Agents vs Personas
 
@@ -119,6 +120,7 @@ git clone https://github.com/alirezarezvani/claude-skills.git
 | **Augment** | `.augment/rules/` | `./scripts/install.sh --tool augment --target .` |
 | **Antigravity** | `~/.gemini/antigravity/skills/` | `./scripts/install.sh --tool antigravity` |
 | **Hermes Agent** | `~/.hermes/skills/` | `python scripts/sync-hermes-skills.py --verbose` |
+| **Mistral Vibe** | `~/.vibe/skills/` | `./scripts/vibe-install.sh` |
 
 **How it works:**
 
@@ -342,8 +344,8 @@ python3 product-team/landing-page-generator/scripts/landing_page_scaffolder.py c
 **How do I install Claude Code plugins?**
 Add the marketplace with `/plugin marketplace add alirezarezvani/claude-skills`, then install any skill bundle with `/plugin install <name>@claude-code-skills`.
 
-**Do these skills work with OpenAI Codex / Cursor / Windsurf / Aider?**
-Yes. Skills work natively with 12 tools: Claude Code, OpenAI Codex, Gemini CLI, OpenClaw, Hermes Agent, Cursor, Aider, Windsurf, Kilo Code, OpenCode, Augment, and Antigravity. Hermes Agent uses the same agentskills.io SKILL.md standard — run `python scripts/sync-hermes-skills.py` to install. For other tools run `./scripts/convert.sh --tool all` then `./scripts/install.sh --tool <name>`. See [Multi-Tool Integrations](https://alirezarezvani.github.io/claude-skills/integrations/) for details.
+**Do these skills work with OpenAI Codex / Cursor / Windsurf / Aider / Mistral Vibe?**
+Yes. Skills work natively with 13 tools: Claude Code, OpenAI Codex, Gemini CLI, OpenClaw, Hermes Agent, Mistral Vibe, Cursor, Aider, Windsurf, Kilo Code, OpenCode, Augment, and Antigravity. Hermes Agent and Mistral Vibe both use the same agentskills.io SKILL.md standard — run `python scripts/sync-hermes-skills.py` or `./scripts/vibe-install.sh` to install. For other tools run `./scripts/convert.sh --tool all` then `./scripts/install.sh --tool <name>`. See [Multi-Tool Integrations](https://alirezarezvani.github.io/claude-skills/integrations/) for details.
 
 **Will updating break my installation?**
 No. We follow semantic versioning and maintain backward compatibility within patch releases. Existing script arguments, plugin source paths, and SKILL.md structures are never changed in patch versions. See the [CHANGELOG](CHANGELOG.md) for details on each release.
