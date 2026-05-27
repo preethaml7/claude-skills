@@ -842,6 +842,27 @@
       "category": "development"
     },
     {
+      "name": "workflow-builder",
+      "source": "./engineering/workflow-builder",
+      "description": "Workflow-builder skill: design and write deterministic multi-agent workflow scripts (.js files in .claude/workflows/) for Claude Code's Workflow tool (CLAUDE_CODE_WORKFLOWS=1, /workflows). Every session opens with an intake question set; when the user is vague, a stdlib recommendation engine infers and proposes a topology with rationale instead of stalling. Ships 3 stdlib Python tools (intake recommendation engine, .js validator enforcing pure-literal-meta / no-non-determinism / guarded-loop / parallel-thunk rules, topology scaffolder), 3 references citing 7-8 authoritative sources each (API surface, orchestration patterns, decision + intake guide), templates + a runnable example, cs-workflow-architect persona agent + /cs:workflow-build slash command. Use when building, scaffolding, or running a custom Claude Code workflow or orchestrating sub-agents (fan-out, pipeline, loop, judge-panel).",
+      "version": "1.0.0",
+      "author": {
+        "name": "Alireza Rezvani"
+      },
+      "keywords": [
+        "workflow",
+        "claude-code-workflows",
+        "multi-agent",
+        "orchestration",
+        "deterministic",
+        "fan-out",
+        "pipeline",
+        "sub-agents",
+        "meta-skill"
+      ],
+      "category": "development"
+    },
+    {
       "name": "caveman",
       "source": "./engineering/caveman",
       "description": "Ultra-compressed communication mode. Cuts token usage 20-50% (75% upper bound) by dropping filler, articles, pleasantries, and hedging while keeping full technical accuracy. Derived from Matt Pocock's MIT-licensed caveman with: (1) 3 stdlib Python tools (deterministic compressor, token-savings estimator with $/Mtok cost extrapolation, lint that detects banned vocab with code-block + exception-zone whitelisting), (2) 3 references citing 7-8 sources (compression principles, when caveman backfires, companion tooling), (3) cs-caveman-mode persona agent + /cs:caveman slash command. Matt's persistence rules + auto-clarity exception preserved verbatim per MIT.",
