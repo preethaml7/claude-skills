@@ -5,9 +5,7 @@ description: "Design and ship production-ready MCP (Model Context Protocol) serv
 
 # MCP Server Builder
 
-**Tier:** POWERFUL  
-**Category:** Engineering  
-**Domain:** AI / API Integration
+**Tier:** POWERFUL · **Category:** Engineering · **Domain:** AI / API Integration
 
 ## Overview
 
@@ -74,9 +72,14 @@ Checks include duplicate names, invalid schema shape, missing descriptions, empt
 
 ### 4. Harden for Production
 
-Apply the auth/safety, versioning, quality-gate, testing, deployment, and
-security guidance in [references/production-hardening-guide.md](references/production-hardening-guide.md)
-before publishing the manifest.
+Key items before publishing:
+
+- Keep secrets in env vars, not tool schemas
+- Prefer outbound host allowlists over open proxies
+- Use additive-only changes; never rename tool names in-place
+
+Full auth/safety, versioning, quality-gate, testing, deployment, and security
+guidance: [references/production-hardening-guide.md](references/production-hardening-guide.md).
 
 ## Script Interfaces
 
