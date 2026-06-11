@@ -209,6 +209,27 @@ def _format_human(report: Report, mode: str, path: Path) -> str:
     return "\n".join(lines)
 
 
+def _report_json(report, mode: str, file_label: str) -> str:
+    return json.dumps(
+        {
+            "file": file_label,
+            "mode": mode,
+            "findings": [
+                {
+                    "line": f.line_number,
+                    "pattern": f.pattern_name,
+                    "severity": f.severity,
+                    "match": f.match,
+                    "suggestion": f.suggestion,
+                }
+                for f in report.findings
+            ],
+            "counts": report.by_severity(),
+        },
+        indent=2,
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Scan a handoff draft for secrets and PII.")
     parser.add_argument("file", nargs="?", help="Path to the handoff markdown file.")
@@ -237,7 +258,10 @@ def main(argv: list[str] | None = None) -> int:
             "Allowed: AKIAIOSFODNN7EXAMPLE <!-- handoff:allow secret -->\n"
         )
         report = scan_text(fixture)
-        print(_format_human(report, "strict", Path("<sample>")))
+        if args.json:
+            print(_report_json(report, "strict", "<sample>"))
+        else:
+            print(_format_human(report, "strict", Path("<sample>")))
         return 1 if report.findings else 0
 
     if args.mode == "off":
@@ -255,26 +279,7 @@ def main(argv: list[str] | None = None) -> int:
     report = scan_file(path)
 
     if args.json:
-        print(
-            json.dumps(
-                {
-                    "file": str(path),
-                    "mode": args.mode,
-                    "findings": [
-                        {
-                            "line": f.line_number,
-                            "pattern": f.pattern_name,
-                            "severity": f.severity,
-                            "match": f.match,
-                            "suggestion": f.suggestion,
-                        }
-                        for f in report.findings
-                    ],
-                    "counts": report.by_severity(),
-                },
-                indent=2,
-            )
-        )
+        print(_report_json(report, args.mode, str(path)))
     else:
         print(_format_human(report, args.mode, path))
 
