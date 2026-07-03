@@ -57,7 +57,7 @@ Hard outputs:
 - Experiment recommendations carry the computed sample size and MDE.
 - Prioritization names its framework (RICE / WSJF / opportunity score) and why.
 - AI features get an eval spec (golden set + rubric + guardrails) in the PRD, per
-  `references/ai_product_evals.md`.
+  `product-team/skills/product-skills/references/ai_product_evals.md`.
 
 ## Anti-patterns
 

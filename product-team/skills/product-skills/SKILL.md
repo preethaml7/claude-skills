@@ -89,7 +89,7 @@ python3 engineering/agent-harness/skills/agent-harness/scripts/goal_compiler.py 
 ```
 
 The domain's three strongest close-out gates plug in as task verifications:
-`spec-to-repo/scripts/validate_project.py` (exit 0), `code-to-prd`'s golden
+`../spec-to-repo/scripts/validate_project.py` (exit 0), `code-to-prd`'s golden
 `expected_outputs/`, and `research-summarizer`'s citation-count check.
 
 ## Hard rules
@@ -99,7 +99,7 @@ The domain's three strongest close-out gates plug in as task verifications:
 2. **Outcome-first**: every loop hangs from one measurable outcome — the linter's O1 rule
    is the intake gate.
 3. **Experiments are gated by math**: sample size from
-   `experiment-designer/scripts/sample_size_calculator.py`, never gut feel; report the
+   `../experiment-designer/scripts/sample_size_calculator.py`, never gut feel; report the
    MDE with the verdict.
 4. **Prioritization shows its framework**: RICE for steady-state, WSJF/cost-of-delay when
    time sensitivity dominates, opportunity scoring for underserved needs — name which and
