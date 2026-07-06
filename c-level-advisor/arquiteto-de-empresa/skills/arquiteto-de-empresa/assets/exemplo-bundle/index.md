@@ -7,7 +7,7 @@ A mini demonstration bundle of the format. Fictional company (a neighborhood caf
 - **Name:** Aurora Café
 - **Stage:** idea
 - **Model:** service (physical café)
-- **Jurisdiction:** Brazil (sole-proprietor entity to be defined)
+- **Jurisdiction:** Brazil (MEI — *Microempreendedor Individual*, sole-proprietor entity — to be defined)
 
 ## Phase progress
 
