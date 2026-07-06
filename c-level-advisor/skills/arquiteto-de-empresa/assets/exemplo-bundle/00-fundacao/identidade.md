@@ -5,7 +5,7 @@ description: Purpose, mission, and non-negotiable values of Aurora Café
 tags: [foundation, identity, culture]
 timestamp: 2026-06-19T10:00:00Z
 status: draft
-versao: 0.1
+version: 0.1
 ---
 
 # Identity — Aurora Café

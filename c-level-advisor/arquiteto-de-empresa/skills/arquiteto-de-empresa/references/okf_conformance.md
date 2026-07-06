@@ -29,7 +29,7 @@ tags: [financial, metrics]
 timestamp: 2026-06-19T10:00:00Z  # ISO 8601, last significant update
 resource: https://docs.google.com/spreadsheets/d/...   # canonical URI, if any
 status: draft                     # tolerated extra: draft | in-review | approved
-versao: 0.1                       # tolerated extra
+version: 0.1                       # tolerated extra
 ---
 ```
 

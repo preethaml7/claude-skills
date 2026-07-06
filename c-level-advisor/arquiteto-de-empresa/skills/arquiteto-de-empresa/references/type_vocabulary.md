@@ -40,7 +40,7 @@ tags: [<tag>, <tag>]
 timestamp: 2026-06-19T10:00:00Z     # ISO 8601
 resource: <canonical URI, if any — spreadsheet, doc, repo, dashboard>
 status: draft                       # draft | in-review | approved
-versao: 0.1
+version: 0.1
 ---
 ```
 
