@@ -9,6 +9,14 @@ lookups in `scripts/sleep.sh` / `scripts/run-sleep.sh`) resolves correctly at
 this folder's location. Licensed under the [MIT License](LICENSE) ©
 Microsoft Corporation.
 
+One cosmetic wording change was made to satisfy this repo's `scripts/check_paths.py`
+CI gate: `skills/skillopt-sleep/SKILL.md`'s frontmatter `description` said
+"...consolidate validated CLAUDE.md/SKILL.md behind a held-out gate" — the
+`CLAUDE.md/SKILL.md` substring reads as a broken relative path to that
+linter's `[A-Za-z0-9_\-./]+/SKILL\.md` regex. Reworded to "CLAUDE.md and
+SKILL.md"; no behavior or meaning changed. Carry this rewording forward on
+re-vendor.
+
 ## What this plugin is
 
 SkillOpt-Sleep gives a local Claude Code agent a nightly **sleep cycle**: it
