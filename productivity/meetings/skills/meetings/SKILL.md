@@ -23,21 +23,24 @@ checklist that flags every orphan. An ASYNC verdict is a win, not a failure.
 
 ## Workflow — gate → agenda → run → extract
 
-**1. Gate.** Price it and apply the three checks. No decision → ASYNC (exit 2): draft a memo
+**1. Gate.** Before starting, ask one clarifying question if the decision to be made is unstated —
+the gate cannot run honestly without it. Then price it and apply the three checks. No decision → ASYNC (exit 2): draft a memo
 instead, stop here. Decision but missing agenda/owner → NOT-READY (exit 3), naming the gap.
 All present → MEET (exit 0) with total cost and a cost-per-minute line.
 
 **2. Agenda.** Only for MEET. Every topic needs a desired outcome — empty outcomes are refused by
 name (exit 2). Decision topics (decide/choose/approve) sort before discuss/inform. Timeboxes plus
 the mandatory 5-minute closing "actions recap" slot must fit `--length`, or the overflow is refused
-with the exact overage (exit 3). Output includes a pre-read line.
+with the exact overage (exit 3). Iterate — trim or split the named topic and re-run until it fits;
+the stop condition is exit 0 (or the meeting goes async). Output includes a pre-read line.
 
 **3. Run.** The user runs the meeting from the printed agenda. Hold the timeboxes; use the closing
 slot to read every action aloud with its owner and date.
 
 **4. Extract.** Feed the raw notes to the extractor: checkboxes, `ACTION:`/`TODO:` lines,
 "@name will …" and "Name will … by date" patterns become a checklist grouped by owner, with
-ORPHAN (no owner) and NO-DUE flags plus summary counts. Assign every orphan before posting.
+ORPHAN (no owner) and NO-DUE flags plus summary counts. Assign every orphan before posting — the
+meeting is done when every action has an owner and a date; that completion check closes the loop.
 
 ```bash
 # 1. Gate: should this meeting exist?

@@ -72,7 +72,7 @@ python ../skills/deep-work/scripts/focus_session_logger.py log --minutes 90 --la
 python ../skills/deep-work/scripts/focus_session_logger.py status --target 15
 python ../skills/deep-work/scripts/focus_session_logger.py streak
 
-# 4. End of day: walk assets/shutdown_checklist.md to "shutdown complete"
+# 4. End of day: walk ../skills/deep-work/assets/shutdown_checklist.md to "shutdown complete"
 ```
 
 ## Stop Conditions

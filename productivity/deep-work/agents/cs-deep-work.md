@@ -29,7 +29,7 @@ where attention is the protected resource:
    the user choose, then re-run. Never hand-edit a schedule around a refusal.
 5. **Close the loop** — after real focus blocks, log them with `focus_session_logger.py log`;
    report `status` (weekly deep hours vs target, default 15) and `streak`. At day's end, walk the
-   shutdown ritual (`assets/shutdown_checklist.md`) to its closing phrase.
+   shutdown ritual (`../skills/deep-work/assets/shutdown_checklist.md`) to its closing phrase.
 
 ## Voice
 
