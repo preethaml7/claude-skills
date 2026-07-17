@@ -1135,7 +1135,7 @@
       "name": "weekly-review",
       "source": "./productivity/weekly-review",
       "description": "GTD weekly-review loop. Scans the workspace for open loops (unchecked boxes, TODO/FIXME, stale files), walks the three-phase GET CLEAR / GET CURRENT / GET CREATIVE checklist with a refusal gate (review is never COMPLETE while a mandatory GET CURRENT step is missing), and audits commitments for stalled / no-next-action / someday candidates with a 0-100 health score. Fills the periodic-review gap from audit/productivity-2026-07.",
-      "version": "2.11.1",
+      "version": "2.11.2",
       "author": {
         "name": "Alireza Rezvani"
       },
@@ -1153,7 +1153,7 @@
       "name": "deep-work",
       "source": "./productivity/deep-work",
       "description": "Deep Work day planner. Classifies tasks deep vs shallow with a shallow-work budget verdict (plus the recent-graduate forcing question), builds a time-blocked schedule (deep blocks of 90+ minutes first, shallow batched, buffers, refuses more than 4 hours of deep demand), and logs focus sessions against a weekly deep-hours target with streaks. Fills the time/attention-management gap from audit/productivity-2026-07.",
-      "version": "2.11.1",
+      "version": "2.11.2",
       "author": {
         "name": "Alireza Rezvani"
       },
@@ -1171,7 +1171,7 @@
       "name": "meetings",
       "source": "./productivity/meetings",
       "description": "Meeting discipline. Cost-gates every meeting before it exists (MEET / ASYNC / NOT-READY verdicts with real dollar cost incl. optional refocus overhead), builds timeboxed agendas that refuse topics without a desired outcome (decision topics first), and extracts owned action items from raw notes with ORPHAN / NO-DUE flags. Fills the meeting-hygiene gap from audit/productivity-2026-07.",
-      "version": "2.11.1",
+      "version": "2.11.2",
       "author": {
         "name": "Alireza Rezvani"
       },
