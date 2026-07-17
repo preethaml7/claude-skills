@@ -10,7 +10,7 @@ deterministic patterns:
   - "@name will ..." / "@name to ..."  mention-owned commitments
   - "Name will <verb> ... by <date>"   prose commitments (capitalized name, pronouns excluded)
 
-For every item it captures the OWNER (an @mention anywhere in the line, or the leading
+For every item it captures the OWNER (an @mention leading the item, or the leading
 "Name will/to" name) and the DUE DATE ("by/due/before <weekday|today|tomorrow|EOD|EOW|
 YYYY-MM-DD|D/M|Month D>") when present, then flags:
 
@@ -37,7 +37,7 @@ CHECKBOX_RE = re.compile(r"^\s*[-*]\s*\[\s*\]\s*(?P<text>.+)$")
 PREFIX_RE = re.compile(r"^\s*(?:ACTION|TODO)\s*:\s*(?P<text>.+)$", re.IGNORECASE)
 MENTION_OWNED_RE = re.compile(r"^\s*@(?P<owner>[A-Za-z][\w.\-]*)\s+(?:will|to)\s+(?P<text>.+)$")
 NAME_WILL_RE = re.compile(r"^\s*(?P<owner>[A-Z][a-zA-Z]+)\s+(?:will|to)\s+(?P<text>.+)$")
-MENTION_ANY_RE = re.compile(r"@(?P<owner>[A-Za-z][\w.\-]*)")
+MENTION_HEAD_RE = re.compile(r"^\s*@(?P<owner>[A-Za-z][\w.\-]*)\s*[:,—-]?\s*(?P<text>.*)$")
 INNER_NAME_WILL_RE = re.compile(r"^(?P<owner>[A-Z][a-zA-Z]+)\s+(?:will|to)\s+(?P<text>.+)$")
 
 _DATE_TOKEN = (
@@ -61,13 +61,18 @@ exit codes:
 
 
 def _extract_owner_and_text(text: str, owner: Optional[str]) -> Tuple[Optional[str], str]:
-    """Refine owner from inside an already-captured action text."""
+    """Refine owner from an already-captured action text.
+
+    Only a mention that LEADS the item confers ownership ("@sam: book the room",
+    "@sam to book the room"). A mid-text mention is the task's object, not its
+    owner ("follow up with @sam") — those stay ORPHAN for a human to assign.
+    """
     m = MENTION_OWNED_RE.match(text.strip())
     if m:  # "@owner will/to rest" at the head — strip the owner phrase from the text
         return m.group("owner"), m.group("text")
-    m = MENTION_ANY_RE.search(text)
+    m = MENTION_HEAD_RE.match(text.strip())
     if m:
-        return m.group("owner"), text
+        return m.group("owner"), (m.group("text") or text)
     m = INNER_NAME_WILL_RE.match(text.strip())
     if m and m.group("owner") not in PRONOUNS:
         return m.group("owner"), m.group("text")
